@@ -4,7 +4,3 @@ phases:
   build:
     commands:
       - ./gradlew build publish
-artifacts:
-  files:
-    - 'build/libs/ntropy.jar'
-  discard-paths: yes

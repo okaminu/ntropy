@@ -3,11 +3,11 @@ apply from: 'aws-credentials.gradle'
 
 publishing {
     publications {
-        mavenJava(MavenPublication) { publication ->
+        shadow(MavenPublication) { publication ->
             groupId 'lt.boldadmin'
             artifactId = 'ntropy'
             version '1.3.0'
-            from components.java
+            project.shadow.component(publication)
 
             repositories {
                 maven {

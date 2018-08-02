@@ -9,7 +9,7 @@ import org.junit.Test
 class LogoutSchedulerTest {
 
     @Test
-    fun `Schedules collaborator's logout`() {
+    fun `Schedules logout for collaborators`() {
         val logoutServiceSpy = mock<LogoutService>()
 
         LogoutScheduler(logoutServiceSpy).schedule()

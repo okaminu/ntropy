@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component
 @Component
 class LogoutScheduler(private val workLogService: WorkLogService) {
 
-    @Scheduled(cron = "*/3 * * * * *")
+    @Scheduled(cron = "*/10 * * * * *")
     fun schedule() {
         workLogService.logout()
     }

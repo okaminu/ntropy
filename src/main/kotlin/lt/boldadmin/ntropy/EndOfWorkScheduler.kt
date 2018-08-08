@@ -5,10 +5,11 @@ import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Component
 
 @Component
-class LogoutScheduler(private val workLogService: WorkLogService) {
+class EndOfWorkScheduler(private val workLogService: WorkLogService) {
 
     @Scheduled(cron = "0 */10 * ? * *")
     fun schedule() {
-        workLogService.logout()
+        workLogService.endAllStartedWorkWhereWorkTimeEnded()
     }
+
 }

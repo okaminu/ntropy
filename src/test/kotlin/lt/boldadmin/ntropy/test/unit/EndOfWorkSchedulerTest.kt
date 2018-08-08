@@ -3,18 +3,18 @@ package lt.boldadmin.ntropy.test.unit
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.verify
 import lt.boldadmin.nexus.service.worklog.WorkLogService
-import lt.boldadmin.ntropy.LogoutScheduler
+import lt.boldadmin.ntropy.EndOfWorkScheduler
 import org.junit.Test
 
-class LogoutSchedulerTest {
+class EndOfWorkSchedulerTest {
 
     @Test
-    fun `Schedules logout for collaborators`() {
+    fun `Schedules an end of work for collaborators`() {
         val workLogServiceSpy = mock<WorkLogService>()
 
-        LogoutScheduler(workLogServiceSpy).schedule()
+        EndOfWorkScheduler(workLogServiceSpy).schedule()
 
-        verify(workLogServiceSpy).logout()
+        verify(workLogServiceSpy).endAllStartedWorkWhereWorkTimeEnded()
     }
 
 }

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component
 @Component
 class EndOfWorkScheduler(private val workLogService: WorkLogService) {
 
-    @Scheduled(cron = "0 */10 * ? * *")
+    @Scheduled(cron = "*/3 * * * * *")
     fun schedule() {
         workLogService.endAllStartedWorkWhereWorkTimeEnded()
     }

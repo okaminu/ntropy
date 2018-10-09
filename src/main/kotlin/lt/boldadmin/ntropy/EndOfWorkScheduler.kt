@@ -1,15 +1,15 @@
 package lt.boldadmin.ntropy
 
-import lt.boldadmin.nexus.service.worklog.WorkLogService
+import lt.boldadmin.nexus.service.worklog.status.WorkLogStartEndService
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Component
 
 @Component
-class EndOfWorkScheduler(private val workLogService: WorkLogService) {
+class EndOfWorkScheduler(private val workLogStartEndService: WorkLogStartEndService) {
 
     @Scheduled(cron = "0 */10 * * * *")
     fun schedule() {
-        workLogService.endAllStartedWorkWhereWorkTimeEnded()
+        workLogStartEndService.endAllStartedWorkWhereWorkTimeEnded()
     }
 
 }

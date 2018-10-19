@@ -10,7 +10,7 @@ class EndOfWorkSchedulerTest {
 
     @Test
     fun `Schedules an end of work for collaborators`() {
-        val workLogStartEndServiceSpy = mock<WorkLogStartEndService>()
+        val workLogStartEndServiceSpy: WorkLogStartEndService = mock()
 
         EndOfWorkScheduler(workLogStartEndServiceSpy).schedule()
 

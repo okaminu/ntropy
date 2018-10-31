@@ -13,4 +13,6 @@
 
     <import resource="repository.xml"/>
     <import resource="nexus.xml"/>
+
+    <import resource="plugin/mongodb.xml"/>
 </beans>

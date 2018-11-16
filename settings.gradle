@@ -1,1 +1,9 @@
 rootProject.name = 'ntropy'
+gradle.ext.group = 'lt.boldadmin'
+gradle.ext.version = '1.3.0'
+
+String[] includePaths = ['../nexus/nexus']
+
+for(String path: includePaths)
+    if( file(path).exists())
+        includeBuild path

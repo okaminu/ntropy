@@ -19,10 +19,11 @@
     </bean>
 
     <bean id="collaboratorService" class="lt.boldadmin.nexus.service.collaborator.CollaboratorService">
-        <property name="beforeUpdateFunctions">
-            <list>
-                <ref bean="worklogEndOnCollaboratorUpdate" />
-            </list>
+        <property name="collaboratorUpdateEvents">
+            <map>
+                <entry key="workTime.startOfDayInMinutes" value-ref="collaboratorWorkTimeStartUpdateEvent"/>
+                <entry key="workTime.endOfDayInMinutes" value-ref="collaboratorWorkTimeEndUpdateEvent"/>
+            </map>
         </property>
     </bean>
 

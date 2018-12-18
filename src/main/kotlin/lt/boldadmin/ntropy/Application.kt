@@ -9,10 +9,10 @@ import org.springframework.scheduling.annotation.EnableScheduling
 @EnableAutoConfiguration
 @EnableScheduling
 @ComponentScan(
-        basePackages = ["lt.boldadmin.ntropy", "lt.boldadmin.nexus.backend.adapter.client"],
+        basePackages = ["lt.boldadmin.ntropy", "lt.boldadmin.nexus.plugin.backendclient"],
         includeFilters = [ComponentScan.Filter(
                 type = FilterType.REGEX,
-                pattern = ["lt.boldadmin.nexus.backend.adapter.client.*"]
+                pattern = ["lt.boldadmin.nexus.plugin.backendclient.*"]
         )]
 )
 class Application

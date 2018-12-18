@@ -22,8 +22,7 @@ dependencyManagement {
 
 dependencies {
     implementation "lt.boldadmin.nexus:nexus-api:$gradle.ext.version"
-    runtime "lt.boldadmin.nexus:nexus:$gradle.ext.version"
-    runtime "lt.boldadmin.nexus:nexus-mongodb-plugin:$gradle.ext.version"
+    runtime "lt.boldadmin.nexus:nexus-backend-client-plugin:$gradle.ext.version"
 
     implementation "org.springframework.boot:spring-boot-starter"
     implementation "org.hibernate:hibernate-validator:5.2.4.Final"

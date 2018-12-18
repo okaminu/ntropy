@@ -25,16 +25,10 @@ dependencies {
     runtime "lt.boldadmin.nexus:nexus-backend-client-plugin:$gradle.ext.version"
 
     implementation "org.springframework.boot:spring-boot-starter"
-    implementation "org.hibernate:hibernate-validator:5.2.4.Final"
     implementation "org.slf4j:slf4j-api"
     implementation "ch.qos.logback:logback-classic"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
-
-    runtime "javax.xml.bind:jaxb-api:2.2.11"
-    runtime "com.sun.xml.bind:jaxb-core:2.2.11"
-    runtime "com.sun.xml.bind:jaxb-impl:2.2.11"
-    runtime "javax.activation:activation:1.1.1"
 
     testImplementation "junit:junit:4.12"
     testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"

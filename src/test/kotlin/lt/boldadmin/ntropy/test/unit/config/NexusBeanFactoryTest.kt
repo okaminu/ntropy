@@ -17,7 +17,7 @@ class NexusBeanFactoryTest {
         val contextStub: GenericApplicationContext = mock()
         val startTimeUpdateDummy: CollaboratorUpdateSubscriber = mock()
         val endTimeUpdateDummy: CollaboratorUpdateSubscriber = mock()
-        val expectedListenersMap = mutableMapOf(
+        val expectedListenersMap = mapOf(
             "workTime.startOfDayInMinutes" to startTimeUpdateDummy,
             "workTime.endOfDayInMinutes" to endTimeUpdateDummy
         )

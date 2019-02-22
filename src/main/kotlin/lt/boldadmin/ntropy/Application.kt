@@ -1,3 +1,5 @@
+package lt.boldadmin.ntropy
+
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.ImportResource

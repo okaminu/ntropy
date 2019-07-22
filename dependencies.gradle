@@ -2,7 +2,7 @@ apply from: 'aws-credentials.gradle'
 
 repositories {
     mavenLocal()
-    mavenCentral()
+    jcenter()
     maven { url "https://repo.spring.io/milestone" }
     repositories {
         maven {
@@ -30,6 +30,8 @@ dependencies {
     implementation "ch.qos.logback:logback-classic"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+
+    detektPlugins "io.gitlab.arturbosch.detekt:detekt-formatting:$detekt_version"
 
     testImplementation "junit:junit:4.12"
     testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"

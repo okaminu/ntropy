@@ -1,14 +1,11 @@
 package lt.boldadmin.ntropy.test.unit.config
 
-import com.nhaarman.mockito_kotlin.any
-import com.nhaarman.mockito_kotlin.doReturn
-import com.nhaarman.mockito_kotlin.eq
-import com.nhaarman.mockito_kotlin.mock
+import com.nhaarman.mockitokotlin2.*
 import lt.boldadmin.nexus.api.service.worklog.CollaboratorUpdateSubscriber
 import lt.boldadmin.ntropy.config.NexusBeanFactory
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 import org.springframework.context.support.GenericApplicationContext
-import kotlin.test.assertEquals
 
 class NexusBeanFactoryTest {
 

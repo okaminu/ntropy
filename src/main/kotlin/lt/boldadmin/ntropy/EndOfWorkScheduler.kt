@@ -9,7 +9,7 @@ class EndOfWorkScheduler(private val service: WorklogOvertimeService) {
 
     @Scheduled(cron = "0 */10 * * * *")
     fun schedule() {
-        service.endAllStartedWorkWhereWorkTimeEnded()
+        service.endOnOvertime()
     }
 
 }

@@ -1,6 +1,6 @@
 package lt.boldadmin.ntropy
 
-import lt.boldadmin.nexus.api.service.worklog.status.WorklogOvertimeService
+import lt.boldadmin.nexus.api.service.worklog.WorklogOvertimeService
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Component
 

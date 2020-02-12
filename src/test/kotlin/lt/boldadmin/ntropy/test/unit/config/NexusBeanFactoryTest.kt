@@ -1,6 +1,7 @@
 package lt.boldadmin.ntropy.test.unit.config
 
-import com.nhaarman.mockitokotlin2.*
+import io.mockk.every
+import io.mockk.mockk
 import lt.boldadmin.nexus.api.service.collaborator.CollaboratorUpdateSubscriber
 import lt.boldadmin.ntropy.config.NexusBeanFactory
 import org.junit.jupiter.api.Assertions.assertEquals
@@ -10,16 +11,14 @@ import org.springframework.context.support.GenericApplicationContext
 class NexusBeanFactoryTest {
 
     @Test
+    @Suppress("RemoveExplicitTypeArguments")
     fun `Provides Collaborator update subscribers map`() {
-        val contextStub: GenericApplicationContext = mock()
-        val startTimeUpdateDummy: CollaboratorUpdateSubscriber = mock()
-        val endTimeUpdateDummy: CollaboratorUpdateSubscriber = mock()
-        val expectedListenersMap = mapOf(
-            "workTime.startOfDayInMinutes" to startTimeUpdateDummy,
-            "workTime.endOfDayInMinutes" to endTimeUpdateDummy
-        )
-        doReturn(startTimeUpdateDummy, endTimeUpdateDummy).`when`(contextStub)
-            .getBean(any<String>(), eq(CollaboratorUpdateSubscriber::class.java))
+        val contextStub: GenericApplicationContext = mockk()
+        val workWeekUpdateDummy: CollaboratorUpdateSubscriber = mockk()
+        val expectedListenersMap = mapOf("workWeek" to workWeekUpdateDummy)
+        every {
+            contextStub.getBean(any<String>(), eq(CollaboratorUpdateSubscriber::class.java))
+        } returns workWeekUpdateDummy
 
         val actualListenersMap = NexusBeanFactory(contextStub).createCollaboratorUpdateSubscribersProvider().invoke()
 

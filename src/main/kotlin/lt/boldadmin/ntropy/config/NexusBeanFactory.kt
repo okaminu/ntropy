@@ -11,13 +11,9 @@ open class NexusBeanFactory(private var context: GenericApplicationContext) {
     @Bean
     open fun createCollaboratorUpdateSubscribersProvider() = {
         mapOf(
-            "workTime.startOfDayInMinutes" to context.getBean<CollaboratorUpdateSubscriber>(
-                "collaboratorWorkEndByWorkTimeStartSubscriber", CollaboratorUpdateSubscriber::class.java
-            ),
-            "workTime.endOfDayInMinutes" to context.getBean<CollaboratorUpdateSubscriber>(
-                "collaboratorWorkEndByWorkTimeEndSubscriber", CollaboratorUpdateSubscriber::class.java
+            "workWeek" to context.getBean<CollaboratorUpdateSubscriber>(
+                "collaboratorWorkEndOnOvertimeService", CollaboratorUpdateSubscriber::class.java
             )
         )
     }
-
 }

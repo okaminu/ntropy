@@ -2,7 +2,7 @@ package lt.boldadmin.ntropy.test.unit.config
 
 import io.mockk.every
 import io.mockk.mockk
-import lt.boldadmin.nexus.api.service.collaborator.CollaboratorUpdateSubscriber
+import lt.boldadmin.nexus.api.service.collaborator.WorkWeekUpdateSubscriber
 import lt.boldadmin.ntropy.config.NexusBeanFactory
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
@@ -12,17 +12,16 @@ class NexusBeanFactoryTest {
 
     @Test
     @Suppress("RemoveExplicitTypeArguments")
-    fun `Provides Collaborator update subscribers map`() {
+    fun `Provides Collaborator work week update subscriber`() {
         val contextStub: GenericApplicationContext = mockk()
-        val workWeekUpdateDummy: CollaboratorUpdateSubscriber = mockk()
-        val expectedListenersMap = mapOf("workWeek" to workWeekUpdateDummy)
+        val expectedSubscriber: WorkWeekUpdateSubscriber = mockk()
         every {
-            contextStub.getBean(any<String>(), eq(CollaboratorUpdateSubscriber::class.java))
-        } returns workWeekUpdateDummy
+            contextStub.getBean(any<String>(), eq(WorkWeekUpdateSubscriber::class.java))
+        } returns expectedSubscriber
 
-        val actualListenersMap = NexusBeanFactory(contextStub).createCollaboratorUpdateSubscribersProvider().invoke()
+        val actualSubscriber = NexusBeanFactory(contextStub).createCollaboratorUpdateSubscribersProvider().invoke()
 
-        assertEquals(expectedListenersMap, actualListenersMap)
+        assertEquals(expectedSubscriber, actualSubscriber)
     }
 
 }

@@ -16,4 +16,5 @@
     </context:component-scan>
 
     <bean factory-bean="httpClientFactory" factory-method="create"/>
+    <bean factory-bean="objectMapperFactory" factory-method="create"/>
 </beans>

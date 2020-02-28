@@ -16,7 +16,7 @@ class NexusBeanFactoryTest {
         val contextStub: GenericApplicationContext = mockk()
         val expectedSubscriber: WorkWeekUpdateSubscriber = mockk()
         every {
-            contextStub.getBean(any<String>(), eq(WorkWeekUpdateSubscriber::class.java))
+            contextStub.getBean(any<String>(), WorkWeekUpdateSubscriber::class.java)
         } returns expectedSubscriber
 
         val actualSubscriber = NexusBeanFactory(contextStub).createCollaboratorUpdateSubscribersProvider().invoke()

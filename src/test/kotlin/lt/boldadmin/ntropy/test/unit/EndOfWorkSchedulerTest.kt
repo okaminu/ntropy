@@ -14,7 +14,7 @@ class EndOfWorkSchedulerTest {
 
         EndOfWorkScheduler(serviceSpy).schedule()
 
-        verify {(serviceSpy).endOnOvertime() }
+        verify { (serviceSpy).endOnOvertime() }
     }
 
 }
